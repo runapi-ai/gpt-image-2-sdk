@@ -1,4 +1,24 @@
-# GPT Image 2 API SDK for RunAPI
+<p align="center">
+  <a href="https://runapi.ai"><img src="https://runapi.ai/icon.svg" height="56" alt="RunAPI"></a>
+</p>
+
+<h3 align="center">
+  <a href="https://github.com/runapi-ai/gpt-image-2-sdk">GPT Image 2 API SDK for RunAPI</a>
+</h3>
+
+<p align="center">
+  GPT Image 2 API SDKs for JavaScript, Ruby, and Go on RunAPI.
+</p>
+
+<div align="center">
+
+[![npm](https://img.shields.io/npm/v/@runapi.ai/gpt-image-2)](https://www.npmjs.com/package/@runapi.ai/gpt-image-2)
+[![RubyGems](https://img.shields.io/gem/v/runapi-gpt-image-2)](https://rubygems.org/gems/runapi-gpt-image-2)
+[![Go Reference](https://pkg.go.dev/badge/github.com/runapi-ai/gpt-image-2-sdk/go.svg)](https://pkg.go.dev/github.com/runapi-ai/gpt-image-2-sdk/go)
+[![License](https://img.shields.io/github/license/runapi-ai/gpt-image-2-sdk)](https://github.com/runapi-ai/gpt-image-2-sdk/blob/main/LICENSE)
+
+</div>
+<br/>
 
 The gpt image 2 api SDK packages JavaScript, Ruby, and Go clients for GPT Image 2 on RunAPI. Use this gpt image 2 api SDK for text-to-image, image-to-image, edit, and creative production workflows that need typed installs, JSON request bodies, task polling, and consistent RunAPI errors across services.
 
