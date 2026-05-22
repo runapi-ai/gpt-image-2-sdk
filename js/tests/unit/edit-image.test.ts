@@ -19,7 +19,7 @@ describe('EditImage', () => {
 
       const editImage = new EditImage(mockHttp);
       const result = await editImage.create({
-        model: 'gpt-image/2-image-to-image',
+        model: 'gpt-image-2-image-to-image',
         prompt: 'Transform into oil painting',
         input_urls: ['https://example.com/photo.jpg'],
         aspect_ratio: 'auto',
@@ -31,7 +31,7 @@ describe('EditImage', () => {
         '/api/v1/gpt_image_2/edit_image',
         {
           body: {
-            model: 'gpt-image/2-image-to-image',
+            model: 'gpt-image-2-image-to-image',
             prompt: 'Transform into oil painting',
             input_urls: ['https://example.com/photo.jpg'],
             aspect_ratio: 'auto',
@@ -48,7 +48,7 @@ describe('EditImage', () => {
 
       const editImage = new EditImage(mockHttp);
       await editImage.create({
-        model: 'gpt-image/2-image-to-image',
+        model: 'gpt-image-2-image-to-image',
         prompt: 'Combine these images',
         input_urls: ['https://example.com/photo1.jpg', 'https://example.com/photo2.jpg'],
       });

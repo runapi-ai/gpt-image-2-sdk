@@ -19,7 +19,7 @@ describe('TextToImage', () => {
 
       const textToImage = new TextToImage(mockHttp);
       const result = await textToImage.create({
-        model: 'gpt-image/2-text-to-image',
+        model: 'gpt-image-2-text-to-image',
         prompt: 'A beautiful landscape',
         aspect_ratio: 'auto',
         nsfw_checker: false,
@@ -30,7 +30,7 @@ describe('TextToImage', () => {
         '/api/v1/gpt_image_2/text_to_image',
         {
           body: {
-            model: 'gpt-image/2-text-to-image',
+            model: 'gpt-image-2-text-to-image',
             prompt: 'A beautiful landscape',
             aspect_ratio: 'auto',
             nsfw_checker: false,
@@ -46,7 +46,7 @@ describe('TextToImage', () => {
 
       const textToImage = new TextToImage(mockHttp);
       await textToImage.create({
-        model: 'gpt-image/2-text-to-image',
+        model: 'gpt-image-2-text-to-image',
         prompt: 'Abstract art',
         aspect_ratio: '16:9',
       });
@@ -56,7 +56,7 @@ describe('TextToImage', () => {
         '/api/v1/gpt_image_2/text_to_image',
         {
           body: {
-            model: 'gpt-image/2-text-to-image',
+            model: 'gpt-image-2-text-to-image',
             prompt: 'Abstract art',
             aspect_ratio: '16:9',
           },

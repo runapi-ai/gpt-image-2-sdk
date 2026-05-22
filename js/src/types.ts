@@ -1,7 +1,7 @@
 import type { AsyncTaskStatus } from '@runapi.ai/core';
 
-export type GptImage2TextToImageModel = 'gpt-image/2-text-to-image';
-export type GptImage2EditImageModel = 'gpt-image/2-image-to-image';
+export type GptImage2TextToImageModel = 'gpt-image-2-text-to-image';
+export type GptImage2EditImageModel = 'gpt-image-2-image-to-image';
 
 export type AspectRatio =
   | 'auto'
