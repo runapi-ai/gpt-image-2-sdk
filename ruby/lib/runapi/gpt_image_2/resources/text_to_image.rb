@@ -42,6 +42,7 @@ module RunApi
           end
 
           validate_optional!(params, :aspect_ratio, Types::ASPECT_RATIOS)
+          validate_optional!(params, :output_resolution, Types::RESOLUTIONS)
         end
       end
     end

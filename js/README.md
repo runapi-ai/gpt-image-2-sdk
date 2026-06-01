@@ -1,6 +1,6 @@
 # GPT Image 2 API JavaScript SDK for RunAPI
 
-The gpt image 2 api JavaScript SDK is the language-specific package for GPT Image 2 on RunAPI. Use this gpt image 2 api package for text-to-image, image-to-image, edit, and creative production flows when your application needs JSON request bodies, task status lookup, and consistent RunAPI errors in JavaScript.
+The gpt image 2 api JavaScript SDK is the language-specific package for GPT Image 2 on RunAPI. Use this gpt image 2 api package for text-to-image, image editing, and creative production flows when your application needs JSON request bodies, task status lookup, and consistent RunAPI errors in JavaScript.
 
 This gpt image 2 api README is the JavaScript package guide inside the public `gpt-image-2-sdk` repository. For the repository overview, start at `../README.md`; for model details, use https://runapi.ai/models/gpt-image-2; for API reference, use https://runapi.ai/docs#gpt-image-2; for SDK docs, use https://runapi.ai/docs#sdk-gpt-image-2.
 

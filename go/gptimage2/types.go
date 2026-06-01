@@ -3,20 +3,20 @@ package gptimage2
 type TaskStatus string
 
 type TextToImageParams struct {
-	Model       string `json:"model" help:"required; gpt-image-2-text-to-image"`
-	Prompt      string `json:"prompt" help:"required; text description of the desired image"`
-	AspectRatio string `json:"aspect_ratio,omitempty" help:"optional; auto, 1:1, 5:4, 9:16, 21:9, 16:9, 4:3, 3:2, 4:5, 3:4, or 2:3"`
-	NSFWChecker *bool  `json:"nsfw_checker,omitempty" help:"optional; content filter toggle"`
-	CallbackURL string `json:"callback_url,omitempty" help:"optional; webhook URL"`
+	Model            string `json:"model" help:"required; model slug"`
+	Prompt           string `json:"prompt" help:"required; text description of the desired image"`
+	AspectRatio      string `json:"aspect_ratio,omitempty" help:"optional; output aspect ratio"`
+	OutputResolution string `json:"output_resolution,omitempty" help:"optional; output resolution"`
+	CallbackURL      string `json:"callback_url,omitempty" help:"optional; webhook URL"`
 }
 
 type EditImageParams struct {
-	Model       string   `json:"model" help:"required; gpt-image-2-image-to-image"`
-	Prompt      string   `json:"prompt" help:"required; text description of the desired edit"`
-	InputURLs   []string `json:"input_urls" help:"required; 1-16 input image URLs"`
-	AspectRatio string   `json:"aspect_ratio,omitempty" help:"optional; auto, 1:1, 5:4, 9:16, 21:9, 16:9, 4:3, 3:2, 4:5, 3:4, or 2:3"`
-	NSFWChecker *bool    `json:"nsfw_checker,omitempty" help:"optional; content filter toggle"`
-	CallbackURL string   `json:"callback_url,omitempty" help:"optional; webhook URL"`
+	Model            string   `json:"model" help:"required; model slug"`
+	Prompt           string   `json:"prompt" help:"required; text description of the desired edit"`
+	SourceImageURLs  []string `json:"source_image_urls" help:"required; 1-16 source image URLs"`
+	AspectRatio      string   `json:"aspect_ratio,omitempty" help:"optional; output aspect ratio"`
+	OutputResolution string   `json:"output_resolution,omitempty" help:"optional; output resolution"`
+	CallbackURL      string   `json:"callback_url,omitempty" help:"optional; webhook URL"`
 }
 
 type AsyncTaskResponse struct {

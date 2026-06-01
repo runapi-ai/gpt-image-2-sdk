@@ -24,18 +24,16 @@ func (s *stubHTTPClient) Request(_ context.Context, method, path string, opts *c
 	return s.response, nil
 }
 
-func boolPtr(v bool) *bool { return &v }
-
 func TestTextToImageCreate(t *testing.T) {
 	stub := &stubHTTPClient{
 		response: json.RawMessage(`{"id":"task_gen_123","status":"processing"}`),
 	}
 	client := NewClientWithHTTP(stub)
 	resp, err := client.TextToImage.Create(context.Background(), TextToImageParams{
-		Model:       "gpt-image-2-text-to-image",
-		Prompt:      "a beautiful landscape",
-		AspectRatio: "auto",
-		NSFWChecker: boolPtr(false),
+		Model:            "gpt-image-2",
+		Prompt:           "a beautiful landscape",
+		AspectRatio:      "16:9",
+		OutputResolution: "2k",
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -44,11 +42,11 @@ func TestTextToImageCreate(t *testing.T) {
 		t.Fatalf("unexpected request: %s %s", stub.method, stub.path)
 	}
 	body := stub.body.(map[string]any)
-	if body["model"] != "gpt-image-2-text-to-image" {
+	if body["model"] != "gpt-image-2" {
 		t.Fatalf("unexpected model: %v", body["model"])
 	}
-	if body["nsfw_checker"] != false {
-		t.Fatalf("unexpected nsfw_checker: %v", body["nsfw_checker"])
+	if body["output_resolution"] != "2k" {
+		t.Fatalf("unexpected output_resolution: %v", body["output_resolution"])
 	}
 	if resp.ID != "task_gen_123" {
 		t.Fatalf("unexpected task ID: %v", resp.ID)
@@ -78,10 +76,11 @@ func TestEditImageCreate(t *testing.T) {
 	}
 	client := NewClientWithHTTP(stub)
 	resp, err := client.EditImage.Create(context.Background(), EditImageParams{
-		Model:       "gpt-image-2-image-to-image",
-		Prompt:      "transform into oil painting",
-		InputURLs:   []string{"https://example.com/photo.jpg"},
-		NSFWChecker: boolPtr(false),
+		Model:            "gpt-image-2",
+		Prompt:           "transform into oil painting",
+		SourceImageURLs:  []string{"https://cdn.runapi.ai/public/samples/photo.jpg"},
+		AspectRatio:      "16:9",
+		OutputResolution: "2k",
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -90,11 +89,11 @@ func TestEditImageCreate(t *testing.T) {
 		t.Fatalf("unexpected request: %s %s", stub.method, stub.path)
 	}
 	body := stub.body.(map[string]any)
-	if body["model"] != "gpt-image-2-image-to-image" {
+	if body["model"] != "gpt-image-2" {
 		t.Fatalf("unexpected model: %v", body["model"])
 	}
-	if body["nsfw_checker"] != false {
-		t.Fatalf("unexpected nsfw_checker: %v", body["nsfw_checker"])
+	if body["output_resolution"] != "2k" {
+		t.Fatalf("unexpected output_resolution: %v", body["output_resolution"])
 	}
 	if resp.ID != "task_edit_123" {
 		t.Fatalf("unexpected task ID: %v", resp.ID)

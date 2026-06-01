@@ -41,12 +41,13 @@ module RunApi
             raise Core::ValidationError, "Invalid model: #{model}. Must be: #{Types::EDIT_MODELS.join(", ")}"
           end
 
-          urls = param(params, :input_urls)
+          urls = param(params, :source_image_urls)
           if urls.nil? || (urls.respond_to?(:empty?) && urls.empty?)
-            raise Core::ValidationError, "input_urls is required for image-to-image models"
+            raise Core::ValidationError, "source_image_urls is required for edit image requests"
           end
 
           validate_optional!(params, :aspect_ratio, Types::ASPECT_RATIOS)
+          validate_optional!(params, :output_resolution, Types::RESOLUTIONS)
         end
       end
     end

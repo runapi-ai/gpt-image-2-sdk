@@ -34,7 +34,7 @@ Generate and edit images with GPT Image 2 through RunAPI. The default path for o
 
 The `runapi` binary is the runtime dependency. Run `runapi auth status` first. For agents and headless runs, prefer `RUNAPI_API_KEY` or import it into saved config with `printf '%s' "$RUNAPI_API_KEY" | runapi auth import-token --token -`. Use `runapi login` only when the user explicitly wants interactive browser auth.
 
-Inspect the available actions and request fields with CLI help:
+Inspect the available commands and request fields with CLI help:
 
 ```shell
 runapi gpt-image-2 --help
@@ -54,7 +54,7 @@ runapi gpt-image-2 text-to-image --async --input-file request.json
 runapi wait <task-id> --service gpt-image-2 --action text-to-image
 ```
 
-Available actions: `text-to-image`, `edit-image`.
+Available commands: `text-to-image`, `edit-image`.
 
 ## SDK integration path
 
@@ -70,8 +70,6 @@ When integrating GPT Image 2 into an app, backend, worker, or library — not fo
 - Provider comparison: https://runapi.ai/providers/openai.md
 - Full model catalog: https://runapi.ai/models.md
 
-## Variants
+## Model
 
-- [GPT Image 2 text to image](https://runapi.ai/models/gpt-image-2/text-to-image.md)
-- [GPT Image 2 image to image](https://runapi.ai/models/gpt-image-2/image-to-image.md)
-
+- [GPT Image 2](https://runapi.ai/models/gpt-image-2.md)
