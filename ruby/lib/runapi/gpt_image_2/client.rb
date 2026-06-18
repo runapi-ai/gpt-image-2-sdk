@@ -2,14 +2,31 @@
 
 module RunApi
   module GptImage2
-    class Client
-      attr_reader :text_to_image, :edit_image
+    # GPT Image 2 generation and editing API client.
+    #
+    # Supports up to 4k output resolution and 'auto' aspect ratio.
+    #
+    # @example
+    #   client = RunApi::GptImage2::Client.new(api_key: "your-api-key")
+    #
+    #   # Text-to-image
+    #   result = client.text_to_image.run(
+    #     model: "gpt-image-2", prompt: "A futuristic cityscape"
+    #   )
+    #
+    #   # Edit image
+    #   edited = client.edit_image.run(
+    #     model: "gpt-image-2", prompt: "Transform into oil painting",
+    #     source_image_urls: ["https://example.com/photo.jpg"]
+    #   )
+    class Client < RunApi::Core::Client
+      # @return [Resources::TextToImage] Text-to-image generation operations.
+      attr_reader :text_to_image
+      # @return [Resources::EditImage] Prompt-guided image editing operations.
+      attr_reader :edit_image
 
       def initialize(api_key: nil, **options)
-        @api_key = Core::Auth.resolve_api_key(api_key)
-
-        client_options = Core::ClientOptions.new(api_key: @api_key, **options)
-        http = client_options.http_client || Core::HttpClient.new(client_options)
+        super
         @text_to_image = Resources::TextToImage.new(http)
         @edit_image = Resources::EditImage.new(http)
       end

@@ -3,6 +3,8 @@
 module RunApi
   module GptImage2
     module Resources
+      # GPT Image 2 text-to-image generation resource.
+      # Generate images from text with up to 4k output resolution.
       class TextToImage
         include RunApi::Core::ResourceHelpers
 

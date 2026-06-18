@@ -3,6 +3,8 @@
 module RunApi
   module GptImage2
     module Resources
+      # GPT Image 2 prompt-guided image editing resource.
+      # Apply text-guided edits to source images (up to 16).
       class EditImage
         include RunApi::Core::ResourceHelpers
 
