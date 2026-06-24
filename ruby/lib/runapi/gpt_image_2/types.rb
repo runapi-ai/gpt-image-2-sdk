@@ -2,18 +2,8 @@
 
 module RunApi
   module GptImage2
-    # Type definitions and constants for GPT Image 2.
-    # Unlike GPT Image 1.5, aspect_ratio and output_resolution are optional.
+    # Type definitions for GPT Image 2.
     module Types
-      MODELS = %w[gpt-image-2].freeze
-      GENERATION_MODELS = MODELS
-      EDIT_MODELS = MODELS
-
-      # 'auto' lets the model choose based on the prompt content.
-      ASPECT_RATIOS = %w[auto 1:1 9:16 16:9 4:3 3:4].freeze
-      # Output resolution tiers. 1:1 is limited to 1k and 2k.
-      RESOLUTIONS = %w[1k 2k 4k].freeze
-
       # A single generated image with its CDN URL.
       class Image < RunApi::Core::BaseModel
         optional :url, String

@@ -4,13 +4,6 @@ from __future__ import annotations
 
 from runapi.core import BaseModel, TaskResponse, optional, required
 
-MODELS = ["gpt-image-2"]
-GENERATION_MODELS = MODELS
-EDIT_MODELS = MODELS
-
-ASPECT_RATIOS = ["auto", "1:1", "9:16", "16:9", "4:3", "3:4"]
-RESOLUTIONS = ["1k", "2k", "4k"]
-
 
 class Image(BaseModel):
     url = optional(str)

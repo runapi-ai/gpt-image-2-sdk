@@ -120,7 +120,7 @@ def test_run_narrows_completed_type():
 
 def test_requires_model():
     client = GptImage2Client(api_key="k", http_client=FakeHttp())
-    with pytest.raises(ValidationError, match="model is required"):
+    with pytest.raises(ValidationError, match="model must be one of: gpt-image-2"):
         client.text_to_image.create(prompt="hi there")
 
 
@@ -132,23 +132,23 @@ def test_requires_prompt():
 
 def test_rejects_unknown_model():
     client = GptImage2Client(api_key="k", http_client=FakeHttp())
-    with pytest.raises(ValidationError, match="Invalid model: nope. Must be: gpt-image-2"):
+    with pytest.raises(ValidationError, match="model must be one of: gpt-image-2"):
         client.text_to_image.create(model="nope", prompt="hi there")
 
 
 def test_rejects_invalid_aspect_ratio():
     client = GptImage2Client(api_key="k", http_client=FakeHttp())
-    with pytest.raises(ValidationError, match="Invalid aspect_ratio"):
+    with pytest.raises(ValidationError, match="aspect_ratio must be one of"):
         client.text_to_image.create(model="gpt-image-2", prompt="hi there", aspect_ratio="5:5")
 
 
 def test_rejects_invalid_output_resolution():
     client = GptImage2Client(api_key="k", http_client=FakeHttp())
-    with pytest.raises(ValidationError, match="Invalid output_resolution"):
+    with pytest.raises(ValidationError, match="output_resolution must be one of"):
         client.text_to_image.create(model="gpt-image-2", prompt="hi there", output_resolution="8k")
 
 
 def test_edit_requires_source_image_urls():
     client = GptImage2Client(api_key="k", http_client=FakeHttp())
-    with pytest.raises(ValidationError, match="source_image_urls is required for edit image requests"):
+    with pytest.raises(ValidationError, match="source_image_urls is required"):
         client.edit_image.create(model="gpt-image-2", prompt="make it pop")
