@@ -17,7 +17,7 @@ module RunApi
     #   # Edit image
     #   edited = client.edit_image.run(
     #     model: "gpt-image-2", prompt: "Transform into oil painting",
-    #     source_image_urls: ["https://example.com/photo.jpg"]
+    #     source_image_urls: ["https://cdn.runapi.ai/public/samples/image.jpg"]
     #   )
     class Client < RunApi::Core::Client
       # @return [Resources::TextToImage] Text-to-image generation operations.

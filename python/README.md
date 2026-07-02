@@ -1,8 +1,8 @@
 # GPT Image 2 Python SDK for RunAPI
 
-The GPT Image 2 Python SDK is the language-specific package for GPT Image 2 on RunAPI. Use this gpt image 2 api package for text-to-image, image editing, and creative production flows when your application needs JSON request bodies, task status lookup, and consistent RunAPI errors in Python.
+The GPT Image 2 Python SDK is the language-specific package for GPT Image 2 on RunAPI. Use this package for image generation, image editing, and creative production workflows when your application needs request bodies, task status lookup, and consistent RunAPI errors in Python.
 
-This gpt image 2 api README is the Python package guide inside the public `gpt-image-2-sdk` repository. For the repository overview, start at `../README.md`; for model details, use https://runapi.ai/models/gpt-image-2; for API reference, use https://runapi.ai/docs#gpt-image-2; for SDK docs, use https://runapi.ai/docs#sdk-gpt-image-2.
+This README is the Python package guide inside the public `gpt-image-2-sdk` repository. For the repository overview, start at `../README.md`; for model details, use https://runapi.ai/models/gpt-image-2; for API reference, use https://runapi.ai/docs#gpt-image-2; for SDK docs, use https://runapi.ai/docs#sdk-gpt-image-2.
 
 ## Install
 
@@ -28,7 +28,7 @@ status = client.text_to_image.get(task.id)
 edit = client.edit_image.create(
     model="gpt-image-2",
     prompt="Transform into oil painting style",
-    source_image_urls=["https://example.com/source.jpg"],
+    source_image_urls=["https://cdn.runapi.ai/public/samples/image.jpg"],
 )
 ```
 
