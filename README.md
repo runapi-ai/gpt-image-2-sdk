@@ -7,14 +7,14 @@
 </h3>
 
 <p align="center">
-  GPT Image 2 API SDKs for JavaScript, Python, Ruby, Go, and Java on RunAPI.
+  GPT Image 2 API SDKs for JavaScript, Python, Ruby, Go, Java, and PHP on RunAPI.
 </p>
 
 <div align="center">
 
 [![npm](https://img.shields.io/npm/v/@runapi.ai/gpt-image-2)](https://www.npmjs.com/package/@runapi.ai/gpt-image-2)
 [![PyPI](https://img.shields.io/pypi/v/runapi-gpt-image-2)](https://pypi.org/project/runapi-gpt-image-2/)
-[![RubyGems](https://img.shields.io/gem/v/runapi-gpt_image_2)](https://rubygems.org/gems/runapi-gpt_image_2)
+[![RubyGems](https://img.shields.io/gem/v/runapi-gpt-image-2)](https://rubygems.org/gems/runapi-gpt-image-2)
 [![Go Reference](https://pkg.go.dev/badge/github.com/runapi-ai/gpt-image-2-sdk/go.svg)](https://pkg.go.dev/github.com/runapi-ai/gpt-image-2-sdk/go)
 [![Maven Central](https://img.shields.io/maven-central/v/ai.runapi/runapi-gpt-image-2)](https://central.sonatype.com/artifact/ai.runapi/runapi-gpt-image-2)
 [![License](https://img.shields.io/github/license/runapi-ai/gpt-image-2-sdk)](https://github.com/runapi-ai/gpt-image-2-sdk/blob/main/LICENSE)
@@ -22,16 +22,16 @@
 </div>
 <br/>
 
-The GPT Image 2 API SDK packages JavaScript, Python, Ruby, Go, and Java clients for GPT Image 2 on RunAPI. Use it for text-to-image and image editing workflows when your app needs typed request builders, predictable task polling, file upload helpers, account helpers, and consistent RunAPI errors.
+The GPT Image 2 API SDK packages JavaScript, Python, Ruby, Go, Java, and PHP clients for GPT Image 2 on RunAPI. Use it for text-to-image and image editing workflows when your app needs typed request builders, predictable task polling, file upload helpers, account helpers, and consistent RunAPI errors.
 
-GPT Image 2 is listed in the RunAPI model catalog at https://runapi.ai/models/gpt-image-2. Variant pages below carry pricing, rate-limit, and commercial-usage details. The public `gpt-image-2-sdk` repository groups the language packages, examples, CI, and release tags for this model.
+GPT Image 2 is listed in the RunAPI model catalog at https://runapi.ai/models/gpt-image-2. Variant pages below carry pricing, rate-limit, and commercial-usage details. The public `gpt-image-2-sdk` repository groups the non-PHP language packages, examples, CI, and release tags for this model. The PHP package is released from a split Composer repository.
 
 ## Install
 
 ```bash
 npm install @runapi.ai/gpt-image-2
 pip install runapi-gpt-image-2
-gem install runapi-gpt_image_2
+gem install runapi-gpt-image-2
 go get github.com/runapi-ai/gpt-image-2-sdk/go@latest
 ```
 
@@ -39,7 +39,7 @@ Gradle:
 
 ```kotlin
 dependencies {
-  implementation("ai.runapi:runapi-gpt-image-2:0.1.0")
+  implementation("ai.runapi:runapi-gpt-image-2:0.1.1")
 }
 ```
 
@@ -49,7 +49,7 @@ Maven:
 <dependency>
   <groupId>ai.runapi</groupId>
   <artifactId>runapi-gpt-image-2</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
@@ -57,10 +57,12 @@ Use the Java BOM when installing multiple RunAPI Java modules:
 
 ```kotlin
 dependencies {
-  implementation(platform("ai.runapi:runapi-bom:0.1.0"))
+  implementation(platform("ai.runapi:runapi-bom:0.1.7"))
   implementation("ai.runapi:runapi-gpt-image-2")
 }
 ```
+
+The PHP package is published from the split Composer repository as `runapi-ai/gpt-image-2`; see https://github.com/runapi-ai/gpt-image-2-php for PHP install and examples.
 
 ## What you can build
 
@@ -102,7 +104,7 @@ Most media endpoints are asynchronous. `create()` submits a task and returns its
 
 - `js/` publishes `@runapi.ai/gpt-image-2`.
 - `python/` publishes `runapi-gpt-image-2`.
-- `ruby/` publishes `runapi-gpt_image_2` when RubyGems publishing resumes.
+- `ruby/` publishes `runapi-gpt-image-2`.
 - `go/` publishes `github.com/runapi-ai/gpt-image-2-sdk/go` and depends on `github.com/runapi-ai/core-sdk/go`.
 - `java/` publishes `ai.runapi:runapi-gpt-image-2` and depends on `ai.runapi:runapi-core`.
 
@@ -112,6 +114,7 @@ Most media endpoints are asynchronous. `create()` submits a task and returns its
 - SDK docs: https://runapi.ai/docs#sdk-gpt-image-2
 - Product docs: https://runapi.ai/docs#gpt-image-2
 - SDK repository: https://github.com/runapi-ai/gpt-image-2-sdk
+- PHP package repository: https://github.com/runapi-ai/gpt-image-2-php
 - Skill repository: https://github.com/runapi-ai/gpt-image-2
 - Provider comparison: https://runapi.ai/providers/openai
 - Full catalog: https://runapi.ai/models
@@ -131,7 +134,7 @@ RunAPI-generated file URLs are temporary. Download and store generated images, v
 
 ### Which package should I install for GPT Image 2 work?
 
-Install the model package for your language: `@runapi.ai/gpt-image-2` on npm, `runapi-gpt-image-2` on PyPI, `runapi-gpt_image_2` on RubyGems, `github.com/runapi-ai/gpt-image-2-sdk/go`, or `ai.runapi:runapi-gpt-image-2`. Install core SDK packages only when you are building shared SDK infrastructure.
+Install the model package for your language: `@runapi.ai/gpt-image-2` on npm, `runapi-gpt-image-2` on PyPI, `runapi-gpt-image-2` on RubyGems, `github.com/runapi-ai/gpt-image-2-sdk/go`, `ai.runapi:runapi-gpt-image-2` on Maven Central, or `runapi-ai/gpt-image-2` on Packagist. Install core SDK packages only when you are building shared SDK infrastructure.
 
 ### Where should public links point?
 
