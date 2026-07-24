@@ -7,13 +7,13 @@ This README is the Ruby package guide inside the public `gpt-image-2-sdk` reposi
 ## Install
 
 ```bash
-gem install runapi-gpt_image_2
+gem install runapi-gpt-image-2
 ```
 
 ## Quick start
 
 ```ruby
-require "runapi-gpt_image_2"
+require "runapi/gpt_image_2"
 
 client = RunApi::GptImage2::Client.new
 task = client.text_to_image.create(
