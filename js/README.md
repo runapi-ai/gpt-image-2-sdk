@@ -2,7 +2,7 @@
 
 The GPT Image 2 JavaScript SDK is the language-specific package for GPT Image 2 on RunAPI. Use this package for image generation, image editing, and creative production workflows when your application needs request bodies, task status lookup, and consistent RunAPI errors in JavaScript.
 
-This README is the JavaScript package guide inside the public `gpt-image-2-sdk` repository. For the repository overview, start at `../README.md`; for model details, use https://runapi.ai/models/gpt-image-2; for API reference, use https://runapi.ai/docs#gpt-image-2; for SDK docs, use https://runapi.ai/docs#sdk-gpt-image-2.
+This README is the JavaScript package guide inside the public `gpt-image-2-sdk` repository. For the repository overview, start at `../README.md`; for model details, use https://runapi.ai/models/gpt-image-2; for API reference, use https://runapi.ai/docs/api/gpt-image-2/text-to-image; for SDK docs, use https://runapi.ai/docs/resources/sdks.
 
 ## Install
 
@@ -17,7 +17,7 @@ import { GptImage2Client } from '@runapi.ai/gpt-image-2';
 
 const client = new GptImage2Client();
 const task = await client.textToImage.create({
-  // Pass the GPT Image 2 JSON request body from https://runapi.ai/docs#gpt-image-2.
+  // Pass the GPT Image 2 JSON request body from https://runapi.ai/docs/api/gpt-image-2/text-to-image.
 });
 const status = await client.textToImage.get(task.id);
 ```
@@ -33,8 +33,8 @@ Use the TypeScript types in `src/types.ts` and the resource classes under `src/r
 ## Links
 
 - Model page: https://runapi.ai/models/gpt-image-2
-- SDK docs: https://runapi.ai/docs#sdk-gpt-image-2
-- Product docs: https://runapi.ai/docs#gpt-image-2
+- SDK docs: https://runapi.ai/docs/resources/sdks
+- Product docs: https://runapi.ai/docs/api/gpt-image-2/text-to-image
 - Pricing and rate limits: https://runapi.ai/models/gpt-image-2/text-to-image
 - Provider comparison: https://runapi.ai/providers/openai
 - Full catalog: https://runapi.ai/models
