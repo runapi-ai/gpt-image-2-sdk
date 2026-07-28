@@ -13,6 +13,7 @@ class TextToImageResponse(TaskResponse):
     """Task status/result for GPT Image 2 text-to-image."""
     id = required(str)
     status = optional(str, enum=lambda: TaskResponse.Status.ALL)
+    task_replayed = optional(bool)
     images = optional([lambda: Image])
     error = optional(str)
 

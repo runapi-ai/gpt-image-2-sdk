@@ -11,11 +11,12 @@ RSpec.describe RunApi::GptImage2::Resources::TextToImage do
     it "POSTs to the correct endpoint with required params" do
       params = {model: "gpt-image-2", prompt: "a futuristic cityscape", aspect_ratio: "16:9", output_resolution: "2k"}
       expect(http).to receive(:request).with(:post, endpoint, body: params)
-        .and_return("id" => "task-1")
+        .and_return("id" => "task-1", "task_replayed" => true)
 
       result = text_to_image.create(**params)
       expect(result).to be_a(RunApi::GptImage2::Types::TextToImageResponse)
       expect(result.id).to eq("task-1")
+      expect(result.task_replayed).to be(true)
     end
 
     it "raises ValidationError when model is missing" do
