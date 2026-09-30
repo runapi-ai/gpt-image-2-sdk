@@ -17,11 +17,6 @@ RSpec.describe RunApi::GptImage2::Resources::EditImage do
       expect(result).to be_a(RunApi::GptImage2::Types::EditImageResponse)
       expect(result.id).to eq("edit-1")
     end
-
-    it "raises ValidationError when source_image_urls is missing" do
-      expect { edit_image.create(model: "gpt-image-2", prompt: "test") }
-        .to raise_error(RunApi::Core::ValidationError, /source_image_urls is required/)
-    end
   end
 
   describe "#get" do

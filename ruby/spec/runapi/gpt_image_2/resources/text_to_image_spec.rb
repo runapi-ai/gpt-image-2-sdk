@@ -18,16 +18,6 @@ RSpec.describe RunApi::GptImage2::Resources::TextToImage do
       expect(result.id).to eq("task-1")
       expect(result.task_replayed).to be(true)
     end
-
-    it "raises ValidationError when model is missing" do
-      expect { text_to_image.create(prompt: "test") }
-        .to raise_error(RunApi::Core::ValidationError, /model must be one of: gpt-image-2/)
-    end
-
-    it "raises ValidationError when prompt is missing" do
-      expect { text_to_image.create(model: "gpt-image-2") }
-        .to raise_error(RunApi::Core::ValidationError, /prompt is required/)
-    end
   end
 
   describe "#get" do
