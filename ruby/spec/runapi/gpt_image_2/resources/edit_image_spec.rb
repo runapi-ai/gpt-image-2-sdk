@@ -9,7 +9,7 @@ RSpec.describe RunApi::GptImage2::Resources::EditImage do
 
   describe "#create" do
     it "POSTs to the correct endpoint with required params" do
-      params = {model: "gpt-image-2", prompt: "transform to oil painting", source_image_urls: ["https://cdn.runapi.ai/public/samples/photo.jpg"], aspect_ratio: "16:9", output_resolution: "2k"}
+      params = {model: "gpt-image-2", prompt: "transform to oil painting", source_image_urls: ["https://cdn.runapi.ai/public/samples/photo.jpg"], aspect_ratio: "16:9", output_resolution: "2k", background: "opaque"}
       expect(http).to receive(:request).with(:post, endpoint, body: params)
         .and_return("id" => "edit-1")
 

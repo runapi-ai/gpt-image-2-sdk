@@ -11,6 +11,7 @@ public final class EditImageParams {
   private final List<String> sourceImageUrls;
   private final String aspectRatio;
   private final String outputResolution;
+  private final String background;
   private final String callbackUrl;
 
   private EditImageParams(Builder builder) {
@@ -19,6 +20,7 @@ public final class EditImageParams {
     this.sourceImageUrls = Gptimage2ParamUtils.strings(builder.sourceImageUrls);
     this.aspectRatio = builder.aspectRatio;
     this.outputResolution = builder.outputResolution;
+    this.background = builder.background;
     this.callbackUrl = builder.callbackUrl;
   }
 
@@ -40,6 +42,7 @@ public final class EditImageParams {
     raw.put("source_image_urls", Gptimage2ParamUtils.wireValue(sourceImageUrls));
     raw.put("aspect_ratio", Gptimage2ParamUtils.wireValue(aspectRatio));
     raw.put("output_resolution", Gptimage2ParamUtils.wireValue(outputResolution));
+    raw.put("background", Gptimage2ParamUtils.wireValue(background));
     raw.put("callback_url", Gptimage2ParamUtils.wireValue(callbackUrl));
     return Gptimage2ParamUtils.compact(raw);
   }
@@ -53,6 +56,7 @@ public final class EditImageParams {
     private List<String> sourceImageUrls;
     private String aspectRatio;
     private String outputResolution;
+    private String background;
     private String callbackUrl;
 
     private Builder() {}
@@ -91,6 +95,12 @@ public final class EditImageParams {
     /** Sets the output resolution. */
     public Builder outputResolution(String value) {
       this.outputResolution = value;
+      return this;
+    }
+
+    /** Background: transparent, opaque, or auto. Omit to let the model choose. */
+    public Builder background(String value) {
+      this.background = value;
       return this;
     }
 

@@ -54,6 +54,7 @@ class GptImage2ClientTest {
         TextToImageParams.builder()
             .model(TextToImageModel.GPT_IMAGE_2)
             .prompt("A small red cube on a plain white table, studio product photo")
+            .background("transparent")
             .build()
     );
 
@@ -61,6 +62,7 @@ class GptImage2ClientTest {
     assertEquals("/api/v1/gpt_image_2/text_to_image", transport.request.getPath());
     JsonNode body = bodyJson(transport.request);
     assertNotNull(body);
+    assertEquals("transparent", body.get("background").asText());
   }
 
   @Test
@@ -115,7 +117,7 @@ class GptImage2ClientTest {
   }
 
     @Test
-    void coversEditimageResourceMethods() {
+    void coversEditimageResourceMethods() throws Exception {
       CapturingTransport createTransport = new CapturingTransport("{\"id\":\"task_edit_image\",\"status\":\"processing\"}");
       GptImage2Client createClient = GptImage2Client.builder().apiKey("sk-test").transport(createTransport).build();
       assertNotNull(createClient.editImage().create(
@@ -123,8 +125,10 @@ class GptImage2ClientTest {
                   .model(EditImageModel.GPT_IMAGE_2)
                   .prompt("A small red cube on a plain white table, studio product photo")
                   .sourceImageUrls(java.util.Arrays.asList("https://cdn.runapi.ai/public/samples/image.jpg"))
+                  .background("opaque")
                   .build()
       ));
+      assertEquals("opaque", bodyJson(createTransport.request).get("background").asText());
 
       CapturingTransport createWithOptionsTransport = new CapturingTransport("{\"id\":\"task_edit_image_options\",\"status\":\"processing\"}");
       GptImage2Client createWithOptionsClient = GptImage2Client.builder().apiKey("sk-test").transport(createWithOptionsTransport).build();

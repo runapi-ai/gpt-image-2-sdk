@@ -9,7 +9,7 @@ RSpec.describe RunApi::GptImage2::Resources::TextToImage do
 
   describe "#create" do
     it "POSTs to the correct endpoint with required params" do
-      params = {model: "gpt-image-2", prompt: "a futuristic cityscape", aspect_ratio: "16:9", output_resolution: "2k"}
+      params = {model: "gpt-image-2", prompt: "a futuristic cityscape", aspect_ratio: "16:9", output_resolution: "2k", background: "transparent"}
       expect(http).to receive(:request).with(:post, endpoint, body: params)
         .and_return("id" => "task-1", "task_replayed" => true)
 

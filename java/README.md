@@ -16,7 +16,7 @@ Gradle:
 
 ```kotlin
 dependencies {
-  implementation("ai.runapi:runapi-gpt-image-2:0.2.0")
+  implementation("ai.runapi:runapi-gpt-image-2:0.3.0")
 }
 ```
 
@@ -26,7 +26,7 @@ Maven:
 <dependency>
   <groupId>ai.runapi</groupId>
   <artifactId>runapi-gpt-image-2</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ Use the BOM when multiple RunAPI Java modules are installed:
 
 ```kotlin
 dependencies {
-  implementation(platform("ai.runapi:runapi-bom:0.9.0"))
+  implementation(platform("ai.runapi:runapi-bom:0.10.0"))
   implementation("ai.runapi:runapi-gpt-image-2")
 }
 ```
@@ -47,7 +47,7 @@ Maven BOM:
     <dependency>
       <groupId>ai.runapi</groupId>
       <artifactId>runapi-bom</artifactId>
-      <version>0.9.0</version>
+      <version>0.10.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
